@@ -1,0 +1,94 @@
+﻿@model IEnumerable<OfferCalculator_2._0.Models.ItemInfoModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Ajax.BeginForm("SearchItem",
+                                                    new AjaxOptions
+                                                    {
+                                                        HttpMethod = "get",
+                                                        InsertionMode = InsertionMode.Replace,
+                                                        UpdateTargetId = "result"
+                                                    }))
+{
+    <input type="search" name="searchTerm" />
+    <input type="submit" value="Sök Plåtarbete" />
+}
+<div id="result">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Item.TypeOfWork)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MatrialPurchasingPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalSellingPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MountingPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountingUnit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dimension)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantityOfWork)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MetalType)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item.TypeOfWork)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MatrialPurchasingPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalSellingPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MountingPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CountingUnit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dimension)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuantityOfWork)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MetalType)
+                </td>
+                <td>
+                    @using (Ajax.BeginForm("AddToOffer", new { id = item.ID },
+                                                new AjaxOptions
+                                                {
+                                                    HttpMethod = "get",
+                                                    OnSuccess = "getresult"
+                                                }))
+                    {
+                        <input type="number" name="Quantity" />
+                        <input type="submit" value="Add" />
+                    }
+
+                    @*@Html.ActionLink("Add", "AddToOffer", new { id = item.ID })*@
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

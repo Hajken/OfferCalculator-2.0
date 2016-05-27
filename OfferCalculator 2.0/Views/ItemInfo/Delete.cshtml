@@ -1,0 +1,88 @@
+﻿@model OfferCalculator_2._0.Models.ItemInfoModels
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ItemInfoModels</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Item.TypeOfWork)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item.TypeOfWork)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MatrialPurchasingPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatrialPurchasingPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalSellingPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalSellingPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MountingPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountingPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountingUnit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountingUnit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dimension)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dimension)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantityOfWork)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantityOfWork)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetalType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetalType)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

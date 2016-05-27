@@ -1,0 +1,75 @@
+﻿@model IEnumerable<OfferCalculator_2._0.Models.ItemInfoModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.TypeOfWork)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MatrialPurchasingPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalSellingPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MountingPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CountingUnit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dimension)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantityOfWork)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MetalType)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item.TypeOfWork)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MatrialPurchasingPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalSellingPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MountingPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CountingUnit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dimension)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuantityOfWork)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MetalType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

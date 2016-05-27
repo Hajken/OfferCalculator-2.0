@@ -1,0 +1,82 @@
+﻿@model OfferCalculator_2._0.Models.ItemInfoModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ItemInfoModels</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Item.TypeOfWork)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item.TypeOfWork)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MatrialPurchasingPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatrialPurchasingPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalSellingPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalSellingPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MountingPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountingPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountingUnit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountingUnit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dimension)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dimension)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantityOfWork)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantityOfWork)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetalType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetalType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
