@@ -13,7 +13,6 @@ namespace OfferCalculator_2._0.Models
         public int ItemID { get; set; }
         public virtual ItemModels Item { get; set; }
 
-
         public decimal MatrialPurchasingPrice { get; set; }
 
         public decimal TotalSellingPrice { get; set; }

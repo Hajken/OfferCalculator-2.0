@@ -10,6 +10,7 @@ using OfferCalculator_2._0.Models;
 
 namespace OfferCalculator_2._0.Controllers
 {
+    [Authorize]
     public class ItemController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
