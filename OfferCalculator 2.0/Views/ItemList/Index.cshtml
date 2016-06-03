@@ -66,15 +66,18 @@
                                                 new AjaxOptions
                                                 {
                                                     HttpMethod = "get",
-                                                    OnSuccess = "getresult"
+                                                    InsertionMode = InsertionMode.Replace,
+                                                    UpdateTargetId = "item" + item.ID
                                                 }))
                     {
                         <input type="number" name="Quantity" />
                         <input type="submit" value="Add" />
                     }
+                    <div id="@("item"+item.ID)">
 
-                    @*@Html.ActionLink("Add", "AddToOffer", new { id = item.ID })*@
-                </td>
+                    </div>
+                        @*@Html.ActionLink("Add", "AddToOffer", new { id = item.ID })*@
+</td>
             </tr>
         }
 

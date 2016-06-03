@@ -52,7 +52,10 @@ namespace OfferCalculator_2._0.Controllers
                 {
                     ViewBag.Message = "Error";
                 }
-               
+                else
+                {
+                    ViewBag.Message = "Added To Offer";
+                }
                 return PartialView("_AddedToOfferCart", itemInformation);
 
             }
