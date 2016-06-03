@@ -17,7 +17,7 @@ namespace OfferCalculator_2._0.Models
 
         public int ItemInfoID { get; set; }
 
-        public virtual ItemInfoModels ItemInfo { get; set; }
+        public virtual MetalItemInfoModels ItemInfo { get; set; }
 
         public decimal Price { get; set; }
 

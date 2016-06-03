@@ -10,7 +10,7 @@ using OfferCalculator_2._0.Models;
 
 namespace OfferCalculator_2._0.Controllers
 {
-    public class ItemInfoController : Controller
+    public class MetalItemInfoController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
@@ -28,7 +28,7 @@ namespace OfferCalculator_2._0.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemInfoModels itemInfoModels = db.ItemInformations.Find(id);
+            MetalItemInfoModels itemInfoModels = db.ItemInformations.Find(id);
             if (itemInfoModels == null)
             {
                 return HttpNotFound();
@@ -48,7 +48,7 @@ namespace OfferCalculator_2._0.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,ItemID,MatrialPurchasingPrice,TotalSellingPrice,MountingPrice,CountingUnit,MetalType")] ItemInfoModels itemInfoModels)
+        public ActionResult Create([Bind(Include = "ID,ItemID,MatrialPurchasingPrice,TotalSellingPrice,MountingPrice,CountingUnit,MetalType")] MetalItemInfoModels itemInfoModels)
         {
             if (ModelState.IsValid)
             {
@@ -68,7 +68,7 @@ namespace OfferCalculator_2._0.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemInfoModels itemInfoModels = db.ItemInformations.Find(id);
+            MetalItemInfoModels itemInfoModels = db.ItemInformations.Find(id);
             if (itemInfoModels == null)
             {
                 return HttpNotFound();
@@ -82,7 +82,7 @@ namespace OfferCalculator_2._0.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,ItemID,MatrialPurchasingPrice,TotalSellingPrice,MountingPrice,CountingUnit,MetalType")] ItemInfoModels itemInfoModels)
+        public ActionResult Edit([Bind(Include = "ID,ItemID,MatrialPurchasingPrice,TotalSellingPrice,MountingPrice,CountingUnit,MetalType")] MetalItemInfoModels itemInfoModels)
         {
             if (ModelState.IsValid)
             {
@@ -101,7 +101,7 @@ namespace OfferCalculator_2._0.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemInfoModels itemInfoModels = db.ItemInformations.Find(id);
+            MetalItemInfoModels itemInfoModels = db.ItemInformations.Find(id);
             if (itemInfoModels == null)
             {
                 return HttpNotFound();
@@ -114,7 +114,7 @@ namespace OfferCalculator_2._0.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ItemInfoModels itemInfoModels = db.ItemInformations.Find(id);
+            MetalItemInfoModels itemInfoModels = db.ItemInformations.Find(id);
             db.ItemInformations.Remove(itemInfoModels);
             db.SaveChanges();
             return RedirectToAction("Index");

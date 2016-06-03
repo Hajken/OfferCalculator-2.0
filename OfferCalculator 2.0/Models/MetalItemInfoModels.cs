@@ -6,7 +6,7 @@ using System.Web;
 
 namespace OfferCalculator_2._0.Models
 {
-    public class ItemInfoModels
+    public class MetalItemInfoModels
     {
         public int ID { get; set; }
 
