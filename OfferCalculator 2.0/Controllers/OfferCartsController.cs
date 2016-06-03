@@ -10,19 +10,18 @@ using OfferCalculator_2._0.Models;
 
 namespace OfferCalculator_2._0.Controllers
 {
-    [Authorize]
-    public class OfferCartController : Controller
+    public class OfferCartsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: OfferCart
+        // GET: OfferCarts
         public ActionResult Index()
         {
-            var offerCarts = db.OfferCarts.Include(o => o.ItemInfo);
+            var offerCarts = db.OfferCarts.Include(o => o.ItemInfo).Include(o => o.OfferInformation);
             return View(offerCarts.ToList());
         }
 
-        // GET: OfferCart/Details/5
+        // GET: OfferCarts/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,19 +36,20 @@ namespace OfferCalculator_2._0.Controllers
             return View(offerCart);
         }
 
-        // GET: OfferCart/Create
+        // GET: OfferCarts/Create
         public ActionResult Create()
         {
             ViewBag.ItemInfoID = new SelectList(db.ItemInformations, "ID", "ID");
+            ViewBag.OfferInformationID = new SelectList(db.OfferInformation, "ID", "OfferName");
             return View();
         }
 
-        // POST: OfferCart/Create
+        // POST: OfferCarts/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,OfferCartName,Quantity,OfferOwner,ItemInfoID,Price,MaterialCost")] OfferCart offerCart)
+        public ActionResult Create([Bind(Include = "ID,OfferInformationID,Quantity,ItemInfoID,Price,MaterialCost")] OfferCart offerCart)
         {
             if (ModelState.IsValid)
             {
@@ -59,10 +59,11 @@ namespace OfferCalculator_2._0.Controllers
             }
 
             ViewBag.ItemInfoID = new SelectList(db.ItemInformations, "ID", "ID", offerCart.ItemInfoID);
+            ViewBag.OfferInformationID = new SelectList(db.OfferInformation, "ID", "OfferName", offerCart.OfferInformationID);
             return View(offerCart);
         }
 
-        // GET: OfferCart/Edit/5
+        // GET: OfferCarts/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -75,15 +76,16 @@ namespace OfferCalculator_2._0.Controllers
                 return HttpNotFound();
             }
             ViewBag.ItemInfoID = new SelectList(db.ItemInformations, "ID", "ID", offerCart.ItemInfoID);
+            ViewBag.OfferInformationID = new SelectList(db.OfferInformation, "ID", "OfferName", offerCart.OfferInformationID);
             return View(offerCart);
         }
 
-        // POST: OfferCart/Edit/5
+        // POST: OfferCarts/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,OfferCartName,Quantity,OfferOwner,ItemInfoID,Price,MaterialCost")] OfferCart offerCart)
+        public ActionResult Edit([Bind(Include = "ID,OfferInformationID,Quantity,ItemInfoID,Price,MaterialCost")] OfferCart offerCart)
         {
             if (ModelState.IsValid)
             {
@@ -92,10 +94,11 @@ namespace OfferCalculator_2._0.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.ItemInfoID = new SelectList(db.ItemInformations, "ID", "ID", offerCart.ItemInfoID);
+            ViewBag.OfferInformationID = new SelectList(db.OfferInformation, "ID", "OfferName", offerCart.OfferInformationID);
             return View(offerCart);
         }
 
-        // GET: OfferCart/Delete/5
+        // GET: OfferCarts/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -110,7 +113,7 @@ namespace OfferCalculator_2._0.Controllers
             return View(offerCart);
         }
 
-        // POST: OfferCart/Delete/5
+        // POST: OfferCarts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

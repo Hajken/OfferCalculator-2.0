@@ -16,10 +16,10 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.OfferCartName, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.OfferInformationID, "OfferInformationID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.OfferCartName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.OfferCartName, "", new { @class = "text-danger" })
+                @Html.DropDownList("OfferInformationID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.OfferInformationID, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -28,14 +28,6 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.OfferOwner, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.OfferOwner, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.OfferOwner, "", new { @class = "text-danger" })
             </div>
         </div>
 

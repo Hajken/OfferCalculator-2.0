@@ -173,7 +173,8 @@
     <Compile Include="Controllers\MetalItemInfoController.cs" />
     <Compile Include="Controllers\ItemListController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\OfferCartController.cs" />
+    <Compile Include="Controllers\OfferCartsController.cs" />
+    <Compile Include="Controllers\OfferInformationController.cs" />
     <Compile Include="Enums\ItemPriceOverSQM.cs" />
     <Compile Include="Enums\MetalTypes.cs" />
     <Compile Include="Enums\CountingUnit.cs" />
@@ -186,11 +187,13 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CompleatOfferModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ItemModels.cs" />
     <Compile Include="Models\MetalItemInfoModels.cs" />
     <Compile Include="Models\OfferCart.cs" />
+    <Compile Include="Models\OfferInformationModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -261,14 +264,19 @@
     <Content Include="Views\MetalItemInfo\Details.cshtml" />
     <Content Include="Views\MetalItemInfo\Edit.cshtml" />
     <Content Include="Views\MetalItemInfo\Index.cshtml" />
-    <Content Include="Views\OfferCart\Create.cshtml" />
-    <Content Include="Views\OfferCart\Delete.cshtml" />
-    <Content Include="Views\OfferCart\Details.cshtml" />
-    <Content Include="Views\OfferCart\Edit.cshtml" />
-    <Content Include="Views\OfferCart\Index.cshtml" />
     <Content Include="Views\ItemList\Index.cshtml" />
     <Content Include="Views\ItemList\_SearchResultsPartial.cshtml" />
     <Content Include="Views\ItemList\_AddedToOfferCart.cshtml" />
+    <Content Include="Views\OfferCarts\Create.cshtml" />
+    <Content Include="Views\OfferCarts\Delete.cshtml" />
+    <Content Include="Views\OfferCarts\Details.cshtml" />
+    <Content Include="Views\OfferCarts\Edit.cshtml" />
+    <Content Include="Views\OfferCarts\Index.cshtml" />
+    <Content Include="Views\OfferInformation\Create.cshtml" />
+    <Content Include="Views\OfferInformation\Delete.cshtml" />
+    <Content Include="Views\OfferInformation\Details.cshtml" />
+    <Content Include="Views\OfferInformation\Edit.cshtml" />
+    <Content Include="Views\OfferInformation\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

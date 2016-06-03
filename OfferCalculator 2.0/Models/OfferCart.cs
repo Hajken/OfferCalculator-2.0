@@ -9,17 +9,22 @@ namespace OfferCalculator_2._0.Models
     {
         public int ID { get; set; }
 
-        public string OfferCartName { get; set; }
+        public int OfferInformationID { get; set; }
+
+        public virtual OfferInformationModels OfferInformation { get; set; }
+
 
         public int Quantity { get; set; }
 
-        public string OfferOwner { get; set; }
 
         public int ItemInfoID { get; set; }
 
+
         public virtual MetalItemInfoModels ItemInfo { get; set; }
 
+
         public decimal Price { get; set; }
+
 
         public decimal MaterialCost { get; set; }
 

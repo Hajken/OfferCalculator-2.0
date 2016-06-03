@@ -28,7 +28,7 @@ namespace OfferCalculator_2._0.Models
         public DbSet<ItemModels> Items { get; set; }
         public DbSet<MetalItemInfoModels> ItemInformations { get; set; }
         public DbSet<OfferCart> OfferCarts { get; set; }
-
+        public DbSet<OfferInformationModels> OfferInformation { get; set; }
 
         public static ApplicationDbContext Create()
         {

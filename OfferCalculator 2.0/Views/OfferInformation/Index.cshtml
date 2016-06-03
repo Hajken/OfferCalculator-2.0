@@ -1,0 +1,45 @@
+﻿@model IEnumerable<OfferCalculator_2._0.Models.OfferInformationModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OfferName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactInformation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OfferOwner)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OfferName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactInformation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OfferOwner)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
