@@ -47,7 +47,7 @@ namespace OfferCalculator_2._0.Controllers
                 var itemInformation = db.ItemInformations
                         .Where(t =>
                             t.ID== itemId);
-
+                //add item to offer/cart
                 if (itemInformation == null)
                 {
                     ViewBag.Message = "Error";
