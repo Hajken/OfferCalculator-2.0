@@ -16,16 +16,11 @@ namespace OfferCalculator_2._0.Models
 
         public decimal MatrialPurchasingPrice { get; set; }
 
-
         public decimal TotalSellingPrice { get; set; }
 
         public decimal MountingPrice { get; set; }
 
         public CountingUnit CountingUnit { get; set; }
-
-        public int Dimension { get; set; }
-
-        public ItemPriceOverSQM QuantityOfWork { get; set; }
 
         public MetalTypes MetalType { get; set; }
     }

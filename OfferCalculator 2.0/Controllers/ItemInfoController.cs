@@ -48,7 +48,7 @@ namespace OfferCalculator_2._0.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,ItemID,MatrialPurchasingPrice,TotalSellingPrice,MountingPrice,CountingUnit,Dimension,QuantityOfWork,MetalType")] ItemInfoModels itemInfoModels)
+        public ActionResult Create([Bind(Include = "ID,ItemID,MatrialPurchasingPrice,TotalSellingPrice,MountingPrice,CountingUnit,MetalType")] ItemInfoModels itemInfoModels)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace OfferCalculator_2._0.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,ItemID,MatrialPurchasingPrice,TotalSellingPrice,MountingPrice,CountingUnit,Dimension,QuantityOfWork,MetalType")] ItemInfoModels itemInfoModels)
+        public ActionResult Edit([Bind(Include = "ID,ItemID,MatrialPurchasingPrice,TotalSellingPrice,MountingPrice,CountingUnit,MetalType")] ItemInfoModels itemInfoModels)
         {
             if (ModelState.IsValid)
             {

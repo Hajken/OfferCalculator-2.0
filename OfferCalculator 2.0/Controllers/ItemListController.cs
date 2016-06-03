@@ -27,12 +27,11 @@ namespace OfferCalculator_2._0.Controllers
             {
                 var itemInformation = db.ItemInformations
                         .Where(t =>
-                            t.Item.TypeOfWork.Contains(searchTerm) ||
-                            t.Dimension.ToString().Contains(searchTerm));
+                            t.Item.TypeOfWork.Contains(searchTerm));
 
                 if (itemInformation == null)
                 {
-                    ViewBag.Message = "Did not find your vehicle!";
+                    ViewBag.Message = "Did not find your any item!";
                 }
                 return PartialView("_SearchResultsPartial", itemInformation);
 
@@ -42,7 +41,6 @@ namespace OfferCalculator_2._0.Controllers
 
         public ActionResult AddToOffer(int quantity, int? itemId=null)
         {
-            return Json(true, JsonRequestBehavior.AllowGet);
             if (Request.IsAjaxRequest())
             {
                 var itemInformation = db.ItemInformations
